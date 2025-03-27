@@ -61,7 +61,7 @@ def main():
     st.set_page_config(
         page_title="Investment Projection Tool",
         layout="wide",
-        page_icon="💰"
+        page_icon="💹"
     )
 
     # Custom CSS for light beige background, dark blue text, and Google Font
@@ -99,46 +99,47 @@ def main():
     """, unsafe_allow_html=True)
 
     # Add the logo image
-    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Gutmann_Private_Bankers_Logo.svg/1200px-Gutmann_Private_Bankers_Logo.svg.png", width=200)
+    st.image(r"C:\Users\JacopoBinati\OneDrive - Venionaire Capital\Desktop\gutmann_privatebank\img\bank_gutmann_cover.jpg", width=800)
 
     st.title("Gutmann Private Banker's Investment Growth Projection")
     st.subheader("Investment Bank Portfolio Simulator")
 
-    # Investment parameters on the main page
-    st.header("Investment Parameters", anchor=None)
+    # Sidebar inputs with dark blue text
+    with st.sidebar:
+        st.header("Investment Parameters", anchor=None)
 
-    initial_amount = st.number_input(
-        "Initial Investment Amount",
-        min_value=500000,
-        max_value=10000000,
-        value=1000000,
-        step=50000
-    )
+        initial_amount = st.number_input(
+            "Initial Investment Amount",
+            min_value=500000,
+            max_value=10000000,
+            value=1000000,
+            step=50000
+        )
 
-    monthly_contribution = st.number_input(
-        "Monthly Investment",
-        min_value=500,
-        max_value=30000,
-        value=5000,
-        step=500
-    )
+        monthly_contribution = st.number_input(
+            "Monthly Investment",
+            min_value=500,
+            max_value=30000,
+            value=5000,
+            step=500
+        )
 
-    risk_appetite = st.slider(
-        "Risk Appetite",
-        min_value=1,
-        max_value=8,
-        value=4,
-        help="1: Very Conservative, 8: Extremely Aggressive"
-    )
+        risk_appetite = st.slider(
+            "Risk Appetite",
+            min_value=1,
+            max_value=8,
+            value=4,
+            help="1: Very Conservative, 8: Extremely Aggressive"
+        )
 
-    investment_horizon = st.slider(
-        "Investment Horizon (Years)",
-        min_value=1,
-        max_value=20,
-        value=10
-    )
+        investment_horizon = st.slider(
+            "Investment Horizon (Years)",
+            min_value=1,
+            max_value=20,
+            value=10
+        )
 
-    st.info(f"🔍 Risk Level: {risk_appetite}/8", icon="ℹ️")
+        st.info(f"🔍 Risk Level: {risk_appetite}/8", icon="ℹ️")
 
     # Calculate projections
     projection_results = calculate_investment_projection(
