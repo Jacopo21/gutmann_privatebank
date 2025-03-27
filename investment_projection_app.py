@@ -70,12 +70,12 @@ def main():
     @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;700&display=swap');
 
     body {
-        background-color: #F5F5DC;  /* Light Beige */
+        background-color: #FCFCF4;  /* Light Beige */
         color: #00008B;  /* Dark Blue */
         font-family: 'Instrument Serif', serif;
     }
     .stApp {
-        background-color: #F5F5DC;
+        background-color: #FCFCF4;
     }
     .stMarkdown, .stTitle, .stHeader {
         color: #00008B;
@@ -99,7 +99,7 @@ def main():
     """, unsafe_allow_html=True)
 
     # Add the logo image
-    st.image(r"C:\Users\JacopoBinati\OneDrive - Venionaire Capital\Desktop\gutmann_privatebank\img\bank_gutmann_cover.jpg", width=800)
+    st.image(r"C:\Users\JacopoBinati\OneDrive - Venionaire Capital\Desktop\gutmann_privatebank\img\bank_gutmann_cover.jpg", width=600)
 
     st.title("Gutmann Private Banker's Investment Growth Projection")
     st.subheader("Investment Bank Portfolio Simulator")
@@ -167,7 +167,7 @@ def main():
         y=projection_results['Lower Bound (10%)'],
         mode='lines',
         name='Lower Bound (10%)',
-        line=dict(color='#4169E1', width=2, dash='dot')  # Royal Blue
+        line=dict(color='#4169E1', width=2, dash='dot')  #  Blue
     ))
 
     # Upper Bound
@@ -176,7 +176,7 @@ def main():
         y=projection_results['Upper Bound (90%)'],
         mode='lines',
         name='Upper Bound (90%)',
-        line=dict(color='#1E90FF', width=2, dash='dot')  # Dodger Blue
+        line=dict(color='#1E90FF', width=2, dash='dot')  #  Blue
     ))
 
     # Cumulative Investment Line
@@ -185,7 +185,7 @@ def main():
         y=projection_results['Cumulative Investment'],
         mode='lines',
         name='Cumulative Investment',
-        line=dict(color='#708090', width=3, dash='dash')  # Slate Gray
+        line=dict(color='#708090', width=3, dash='dash')  #  Gray
     ))
 
     # Layout with light beige theme
@@ -194,9 +194,9 @@ def main():
         xaxis_title='Years',
         yaxis_title='Portfolio Value ($)',
         height=600,
-        paper_bgcolor='rgba(245, 245, 220, 0.5)',  # Light Beige with transparency
-        plot_bgcolor='rgba(245, 245, 220, 0.5)',   # Light Beige with transparency
-        font=dict(color='#00008B'),  # Dark Blue text
+        paper_bgcolor='rgba(245, 245, 220, 0.5)', 
+        plot_bgcolor='rgba(245, 245, 220, 0.5)',  
+        font=dict(color='#00008B'),  #  Blue text
         legend_title_font_color='#00008B'
     )
 
