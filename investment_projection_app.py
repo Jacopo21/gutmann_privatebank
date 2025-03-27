@@ -57,28 +57,29 @@ def calculate_investment_projection(initial_amount, monthly_contribution, risk_a
     return results
 
 def main():
-    # Custom page configuration with light beige background
+    # Custom page configuration with white background
     st.set_page_config(
         page_title="Investment Projection Tool",
         layout="wide",
         page_icon="💹"
     )
 
-    # Custom CSS for light beige background, dark blue text, and Google Font
+    # Custom CSS for white background, dark blue text, and Google Font
     st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;700&display=swap');
 
     body {
-        background-color: #FCFCF4;  /* Light Beige */
+        background-color: #FFFFFF;  /* White */
         color: #00008B;  /* Dark Blue */
         font-family: 'Instrument Serif', serif;
     }
     .stApp {
-        background-color: #FCFCF4;
+        background-color: #FFFFFF;
     }
-    .stMarkdown, .stTitle, .stHeader {
+    .stMarkdown, .stTitle, .stHeader, .css-1d391kg, .css-1offfwp {
         color: #00008B;
+        font-family: 'Instrument Serif', serif;
     }
     .stMetric {
         background-color: rgba(0, 0, 139, 0.05);
@@ -95,14 +96,34 @@ def main():
         font-weight: 400;
         font-style: italic;
     }
+    .stSlider > div > div > div {
+        background-color: #ADD8E6; /* Light Blue */
+    }
+    .stSlider > div > div > div > div {
+        background-color: #00008B; /* Dark Blue */
+        width: 20px; /* Increase the size of the thumb */
+        height: 20px;
+        border-radius: 50%;
+        box-shadow: 0 3px 1px -2px gray, 0 2px 2px 0 gray, 0 1px 5px 0 gray;
+    }
+    .stSlider > div > div > div > div:hover {
+        background-color: #0000CD; /* Medium Blue */
+    }
+    .css-1d391kg {
+        background-color: #00008B; /* Dark Blue for sidebar */
+        color: #FFFFFF; /* White text for sidebar */
+    }
+    .css-1offfwp {
+        color: #FFFFFF; /* White text for sidebar items */
+    }
     </style>
     """, unsafe_allow_html=True)
 
     # Add the logo image
     st.image(r"C:\Users\JacopoBinati\OneDrive - Venionaire Capital\Desktop\gutmann_privatebank\img\bank_gutmann_cover.jpg", width=600)
 
-    st.title("Gutmann Private Banker's Investment Growth Projection")
-    st.subheader("Investment Bank Portfolio Simulator")
+    st.markdown('<h1 class="instrument-serif-regular">Gutmann Private Banker\'s Investment Growth Projection</h1>', unsafe_allow_html=True)
+    st.markdown('<h2 class="instrument-serif-regular">Investment Bank Portfolio Simulator</h2>', unsafe_allow_html=True)
 
     # Sidebar inputs with dark blue text
     with st.sidebar:
@@ -149,7 +170,7 @@ def main():
         investment_horizon
     )
 
-    # Plotting with a light color palette
+    # Plotting with a white background
     fig = go.Figure()
 
     # Median Projection
@@ -167,7 +188,7 @@ def main():
         y=projection_results['Lower Bound (10%)'],
         mode='lines',
         name='Lower Bound (10%)',
-        line=dict(color='#4169E1', width=2, dash='dot')  #  Blue
+        line=dict(color='#4169E1', width=2, dash='dot')  # Blue
     ))
 
     # Upper Bound
@@ -176,7 +197,7 @@ def main():
         y=projection_results['Upper Bound (90%)'],
         mode='lines',
         name='Upper Bound (90%)',
-        line=dict(color='#1E90FF', width=2, dash='dot')  #  Blue
+        line=dict(color='#1E90FF', width=2, dash='dot')  # Blue
     ))
 
     # Cumulative Investment Line
@@ -185,18 +206,18 @@ def main():
         y=projection_results['Cumulative Investment'],
         mode='lines',
         name='Cumulative Investment',
-        line=dict(color='#708090', width=3, dash='dash')  #  Gray
+        line=dict(color='#708090', width=3, dash='dash')  # Gray
     ))
 
-    # Layout with light beige theme
+    # Layout with white background
     fig.update_layout(
         title='Investment Growth Projection',
         xaxis_title='Years',
         yaxis_title='Portfolio Value ($)',
         height=600,
-        paper_bgcolor='rgba(245, 245, 220, 0.5)', 
-        plot_bgcolor='rgba(245, 245, 220, 0.5)',  
-        font=dict(color='#00008B'),  #  Blue text
+        paper_bgcolor='rgba(255, 255, 255, 1)',
+        plot_bgcolor='rgba(255, 255, 255, 1)',
+        font=dict(color='#00008B', family='Instrument Serif, serif'),  # Blue text and custom font
         legend_title_font_color='#00008B'
     )
 
