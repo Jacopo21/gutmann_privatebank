@@ -107,10 +107,10 @@ def main():
         box-shadow: 0 3px 1px -2px gray, 0 2px 2px 0 gray, 0 1px 5px 0 gray;
     }
     .stSlider > div > div > div > div:hover {
-        background-color: #0000CD; /* Medium Blue */
+        background-color: #ffffff; /* Medium Blue */
     }
     .css-1d391kg {
-        background-color: #00008B; /* Dark Blue for sidebar */
+        background-color: #ffffff; /* transparent for sidebar */
         color: #FFFFFF; /* White text for sidebar */
     }
     .css-1offfwp {
@@ -119,13 +119,13 @@ def main():
     </style>
     """, unsafe_allow_html=True)
 
-    # Add the logo image
+    # Add the logo 
     st.image(r"C:\Users\JacopoBinati\OneDrive - Venionaire Capital\Desktop\gutmann_privatebank\img\bank_gutmann_cover.jpg", width=600)
 
     st.markdown('<h1 class="instrument-serif-regular">Gutmann Private Banker\'s Investment Growth Projection</h1>', unsafe_allow_html=True)
     st.markdown('<h2 class="instrument-serif-regular">Investment Bank Portfolio Simulator</h2>', unsafe_allow_html=True)
 
-    # Sidebar inputs with dark blue text
+    # Sidebar inputs 
     with st.sidebar:
         st.header("Investment Parameters", anchor=None)
 
